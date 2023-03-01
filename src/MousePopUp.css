@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus,
+*:active {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.iconActive {
+    position: relative;
+    background-image: linear-gradient(-225deg, #7085B6 0%, #87A7D9 50%, #DEF3F8 100%);
+    border-radius: 50%;
+    padding: 15px;
+    margin: 10px;
+    width: 55px;
+    height: 55px;
+    border: none;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transition: all .1s ease-in-out;
+}
+
+.icon {
+    position: relative;
+    background: #725E7A;
+    border-radius: 50%;
+    padding: 15px;
+    margin: 10px;
+    width: 55px;
+    height: 55px;
+    border: none;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transition: all .1s ease-in-out;
+}
+
+.iconActive:hover,
+.icon:hover {
+    transform: translateY(-3px);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.tooltip {
+    display: none;
+}
+
+.tooltipActive {
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.tooltipActive::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.icon:hover .tooltipActive,
+.iconActive:hover .tooltipActive {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.icon:hover span,
+.icon:hover .tooltipActive,
+.iconActive:hover span,
+.iconActive:hover .tooltipActive {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.mouseTeach {
+    float: right;
+    margin: 0;
+}
+
+.mouseTeach:hover,
+.mouseTeach:hover .tooltipActive,
+.mouseTeach:hover .tooltipActive::before {
+    background: #567189;
+    font-family: 'Courgette', cursive;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+}
